@@ -1,0 +1,22 @@
+{
+  "name": "rainman-skills",
+  "owner": {
+    "name": "deusyu",
+    "email": "rainman@deusyu.app"
+  },
+  "metadata": {
+    "description": "Claude Code Skills by Rainman — natural language bookkeeping and more",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "nl2ledger",
+      "description": "Natural language bookkeeping for QianJi CSV",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/nl2ledger"
+      ]
+    }
+  ]
+}
