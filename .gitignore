@@ -1,0 +1,4 @@
+QianJi_*.csv
+!**/sample/QianJi_sample.csv
+.DS_Store
+.claude/
