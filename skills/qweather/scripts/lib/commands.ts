@@ -1,8 +1,7 @@
 import {
-  GEO_API_BASE_URL,
-  WEATHER_API_BASE_URL,
   CliError,
   ExitCode,
+  getApiHost,
   getApiKey,
   isRecord,
 } from "./config.ts";
@@ -12,6 +11,7 @@ import type { CommandName } from "./validators.ts";
 export interface ExecuteCommandDependencies {
   requestJson?: (request: HttpGetRequest) => Promise<unknown>;
   apiKey?: string;
+  apiHost?: string;
   timeoutMs?: number;
   retries?: number;
 }
@@ -19,6 +19,7 @@ export interface ExecuteCommandDependencies {
 interface RuntimeContext {
   requestJson: (request: HttpGetRequest) => Promise<unknown>;
   apiKey: string;
+  apiHost: string;
   timeoutMs: number | undefined;
   retries: number | undefined;
 }
@@ -40,15 +41,13 @@ function getOptionalString(flags: Record<string, unknown>, key: string): string 
 }
 
 async function runQuery(
-  baseUrl: string,
   path: string,
   params: Record<string, string | undefined>,
   context: RuntimeContext,
 ): Promise<unknown> {
   const payload = await context.requestJson({
-    url: `${baseUrl}${path}`,
-    params,
-    bearerToken: context.apiKey,
+    url: `${context.apiHost}${path}`,
+    params: { ...params, key: context.apiKey },
     timeoutMs: context.timeoutMs,
     retries: context.retries,
   });
@@ -80,6 +79,7 @@ export async function executeCommand(
   const context: RuntimeContext = {
     requestJson: dependencies.requestJson ?? getJsonWithRetry,
     apiKey: dependencies.apiKey ?? getApiKey(),
+    apiHost: dependencies.apiHost ?? getApiHost(),
     timeoutMs: dependencies.timeoutMs,
     retries: dependencies.retries,
   };
@@ -90,7 +90,7 @@ export async function executeCommand(
       const adm = getOptionalString(flags, "adm");
       const range = getOptionalString(flags, "range");
 
-      return runQuery(GEO_API_BASE_URL, "/geo/v2/city/lookup", {
+      return runQuery("/geo/v2/city/lookup", {
         location,
         adm,
         range,
@@ -101,7 +101,7 @@ export async function executeCommand(
       const lang = getRequiredString(flags, "lang");
       const unit = getRequiredString(flags, "unit");
 
-      return runQuery(WEATHER_API_BASE_URL, "/v7/weather/now", {
+      return runQuery( "/v7/weather/now", {
         location,
         lang,
         unit,
@@ -113,7 +113,7 @@ export async function executeCommand(
       const lang = getRequiredString(flags, "lang");
       const unit = getRequiredString(flags, "unit");
 
-      return runQuery(WEATHER_API_BASE_URL, `/v7/weather/${days}d`, {
+      return runQuery( `/v7/weather/${days}d`, {
         location,
         lang,
         unit,
@@ -123,7 +123,7 @@ export async function executeCommand(
       const location = getRequiredString(flags, "location");
       const type = getRequiredString(flags, "type");
 
-      return runQuery(WEATHER_API_BASE_URL, "/v7/indices/1d", {
+      return runQuery( "/v7/indices/1d", {
         location,
         type,
       }, context);

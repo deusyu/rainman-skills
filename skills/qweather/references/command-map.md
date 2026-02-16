@@ -48,7 +48,7 @@
 - `4`: API business error (code != "200")
 - `5`: unexpected internal error
 
-## API Base URLs
-- Free tier: `https://devapi.qweather.com`
-- GeoAPI: `https://geoapi.qweather.com`
-- Auth: `Authorization: Bearer {QWEATHER_API_KEY}`
+## Configuration
+- `QWEATHER_API_KEY`: API key from console
+- `QWEATHER_API_HOST`: Per-developer host (e.g. `xxxxx.re.qweatherapi.com`)
+- Auth: key passed as query parameter `key=`
