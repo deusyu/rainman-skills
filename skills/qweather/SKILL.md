@@ -12,7 +12,7 @@ description: >
 Query real-time weather, forecasts, and life indices via QWeather (和风天气) API.
 
 ## Quick Start
-1. Ensure `QWEATHER_API_KEY` is set (get one at https://console.qweather.com).
+1. Ensure `QWEATHER_API_KEY` and `QWEATHER_API_HOST` are set (get both at https://console.qweather.com).
 2. Run `bun scripts/weather.ts --help` in this skill directory.
 3. Pick the matching command from `references/command-map.md`.
 
@@ -32,6 +32,6 @@ Always use `lookup` for unfamiliar city names to get the correct LocationID.
 
 ## Notes
 - This skill is script-first and does not run an MCP server.
-- Requires `QWEATHER_API_KEY` environment variable.
-- Free tier: devapi.qweather.com, supports now + 3-day forecast + indices.
+- Requires `QWEATHER_API_KEY` and `QWEATHER_API_HOST` environment variables.
+- API host is per-developer, find yours at https://console.qweather.com/setting
 - Data updated every 10-20 minutes for real-time weather.

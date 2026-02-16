@@ -29,7 +29,7 @@ function printGlobalHelp(): void {
 
   lines.push("");
   lines.push("Tips:");
-  lines.push("  - Set QWEATHER_API_KEY before running commands");
+  lines.push("  - Set QWEATHER_API_KEY and QWEATHER_API_HOST before running commands");
   lines.push("  - Use `lookup` to find LocationID for a city name");
   lines.push("  - Use --help after a command for command-specific details");
   process.stdout.write(`${lines.join("\n")}\n`);

@@ -10,7 +10,6 @@ import {
 export interface HttpGetRequest {
   url: string;
   params: Record<string, string | undefined>;
-  bearerToken: string;
   timeoutMs?: number;
   retries?: number;
 }
@@ -55,7 +54,6 @@ export async function getJsonWithRetry(request: HttpGetRequest): Promise<unknown
         signal: controller.signal,
         headers: {
           Accept: "application/json",
-          Authorization: `Bearer ${request.bearerToken}`,
         },
       });
 
