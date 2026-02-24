@@ -15,6 +15,7 @@ Claude Code Skills by Rainman.
 | [exchange-rate](./skills/exchange-rate/) | 汇率换算 — 查询实时汇率、历史汇率（数据源：ECB） |
 | [qweather](./skills/qweather/) | 天气查询 — 实时天气、预报、生活指数（数据源：和风天气） |
 | [cosmetic-detect](./skills/cosmetic-detect/) | 整容检测 — 上传照片，分析是否有医美/整容痕迹 |
+| [car-advisor](./skills/car-advisor/) | 买车顾问 — 实时汽车参数对比、价格查询、车主评价、购车建议 |
 
 ## 安装
 
@@ -196,6 +197,40 @@ Analyze this photo for cosmetic procedures
 ```
 
 Claude 会输出结构化的分析报告，包含区域发现、跨区域一致性、自然度评分和置信度。
+
+## car-advisor
+
+实时汽车问答与对比分析系统。Claude 会从官网、懂车帝、汽车之家、真实车主评价等渠道实时检索数据，回答任何买车相关问题。
+
+### 功能
+
+- 多车型参数横向对比，输出结构化表格
+- 实时价格查询（从品牌官网获取最新售价）
+- 真实车主评价汇总（懂车帝、汽车之家、知乎）
+- 按预算推荐车型
+- 智驾能力对比（NOA、激光雷达、算力等）
+- 销量/市场数据查询
+- 无需 API Key（基于 Web 搜索）
+
+### 使用示例
+
+```
+小米SU7和Model 3哪个好
+```
+```
+问界M9多少钱
+```
+```
+20-30万预算推荐什么新能源SUV
+```
+```
+Model Y 焕新版有座椅通风吗
+```
+```
+2024年最畅销新能源车排名
+```
+
+Claude 会实时搜索数据，生成参数对比表，汇总车主评价，并给出附带数据来源的购买建议。
 
 ## License
 
