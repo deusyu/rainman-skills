@@ -15,6 +15,7 @@ A monorepo of custom [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 | [exchange-rate](./skills/exchange-rate/) | Currency exchange rate query and conversion (ECB data) |
 | [qweather](./skills/qweather/) | Weather query — real-time weather, forecasts, and life indices (QWeather) |
 | [cosmetic-detect](./skills/cosmetic-detect/) | Analyze photos to detect signs of cosmetic surgery or aesthetic procedures |
+| [car-advisor](./skills/car-advisor/) | Real-time car comparison and purchase advisor with live data |
 
 ## Installation
 
@@ -196,6 +197,40 @@ Compare these two photos — any surgical changes?
 ```
 
 Claude will output a structured analysis with regional findings, cross-region coherence, naturalness score, and confidence levels.
+
+## car-advisor
+
+Real-time car comparison and purchase advisor. Claude searches live data from official sites, Dongchedi, Autohome, and owner reviews to answer any car-related question.
+
+### Features
+
+- Multi-car parameter comparison with structured tables
+- Real-time pricing from official brand websites
+- Owner reviews and ratings from Dongchedi, Autohome, Zhihu
+- Budget-based car recommendations
+- Smart driving (ADAS) capability comparison
+- Sales and market data lookup
+- No API key required (uses web search)
+
+### Usage
+
+```
+小米SU7和Model 3哪个好
+```
+```
+问界M9多少钱
+```
+```
+20-30万预算推荐什么新能源SUV
+```
+```
+Model Y 焕新版有座椅通风吗
+```
+```
+2024年最畅销新能源车排名
+```
+
+Claude will search live data, generate comparison tables, summarize owner feedback, and give purchase recommendations with data sources cited.
 
 ## License
 
