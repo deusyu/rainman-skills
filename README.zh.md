@@ -14,7 +14,6 @@ Claude Code Skills by Rainman.
 | [cn-holiday](./skills/cn-holiday/) | 中国节假日/调休查询 — 查某天是工作日还是休息日 |
 | [exchange-rate](./skills/exchange-rate/) | 汇率换算 — 查询实时汇率、历史汇率（数据源：ECB） |
 | [qweather](./skills/qweather/) | 天气查询 — 实时天气、预报、生活指数（数据源：和风天气） |
-| [cosmetic-detect](./skills/cosmetic-detect/) | 整容检测 — 上传照片，分析是否有医美/整容痕迹 |
 | [car-advisor](./skills/car-advisor/) | 买车顾问 — 实时汽车参数对比、价格查询、车主评价、购车建议 |
 | [mac-upgrade-advisor](./skills/mac-upgrade-advisor/) | 判断 Mac 是否值得换新 —— 按真实瓶颈而非芯片代数决策 |
 
