@@ -46,15 +46,6 @@
       ]
     },
     {
-      "name": "cosmetic-detect",
-      "description": "Analyze photos to detect signs of cosmetic surgery or aesthetic procedures",
-      "source": "./",
-      "strict": false,
-      "skills": [
-        "./skills/cosmetic-detect"
-      ]
-    },
-    {
       "name": "exchange-rate",
       "description": "Currency exchange rate query and conversion (ECB data)",
       "source": "./",
