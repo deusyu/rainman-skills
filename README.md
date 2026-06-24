@@ -166,38 +166,6 @@ Query real-time weather, forecasts, and life indices via [QWeather](https://www.
 上海未来三天天气预报
 ```
 
-## cosmetic-detect
-
-Analyze facial/body photos to detect signs of cosmetic surgery or aesthetic procedures. Upload a photo and Claude will perform a systematic region-by-region analysis.
-
-### Features
-
-- Region-by-region analysis: eyes, nose, lips, jawline, forehead, cheeks, skin, neck, and body
-- Cross-region coherence check (ethnic, age, symmetry, proportion)
-- Before/after photo comparison mode
-- Naturalness score (1-10) with confidence levels
-- Ethnic baseline references for accurate detection
-- Bilingual output (Chinese/English)
-
-### Usage
-
-Upload a photo in Claude Code and ask:
-
-```
-看看这张照片有没有整过
-```
-```
-Analyze this photo for cosmetic procedures
-```
-```
-帮我鉴定一下，自然度评分多少
-```
-```
-Compare these two photos — any surgical changes?
-```
-
-Claude will output a structured analysis with regional findings, cross-region coherence, naturalness score, and confidence levels.
-
 ## car-advisor
 
 Real-time car comparison and purchase advisor. Claude searches live data from official sites, Dongchedi, Autohome, and owner reviews to answer any car-related question.
