@@ -26,6 +26,51 @@
       "skills": [
         "./skills/mac-upgrade-advisor"
       ]
+    },
+    {
+      "name": "car-advisor",
+      "description": "Real-time car comparison and purchase advisor with live data",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/car-advisor"
+      ]
+    },
+    {
+      "name": "cn-holiday",
+      "description": "Query Chinese public holidays, 调休, and work schedules",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/cn-holiday"
+      ]
+    },
+    {
+      "name": "cosmetic-detect",
+      "description": "Analyze photos to detect signs of cosmetic surgery or aesthetic procedures",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/cosmetic-detect"
+      ]
+    },
+    {
+      "name": "exchange-rate",
+      "description": "Currency exchange rate query and conversion (ECB data)",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/exchange-rate"
+      ]
+    },
+    {
+      "name": "qweather",
+      "description": "Weather query — real-time weather, forecasts, and life indices (QWeather)",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/qweather"
+      ]
     }
   ]
 }
