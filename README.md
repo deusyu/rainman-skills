@@ -16,6 +16,7 @@ A monorepo of custom [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 | [qweather](./skills/qweather/) | Weather query — real-time weather, forecasts, and life indices (QWeather) |
 | [cosmetic-detect](./skills/cosmetic-detect/) | Analyze photos to detect signs of cosmetic surgery or aesthetic procedures |
 | [car-advisor](./skills/car-advisor/) | Real-time car comparison and purchase advisor with live data |
+| [mac-upgrade-advisor](./skills/mac-upgrade-advisor/) | Decide whether a Mac is worth upgrading — by real bottleneck, not chip generation |
 
 ## Installation
 
