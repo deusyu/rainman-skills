@@ -16,6 +16,7 @@ Claude Code Skills by Rainman.
 | [qweather](./skills/qweather/) | 天气查询 — 实时天气、预报、生活指数（数据源：和风天气） |
 | [cosmetic-detect](./skills/cosmetic-detect/) | 整容检测 — 上传照片，分析是否有医美/整容痕迹 |
 | [car-advisor](./skills/car-advisor/) | 买车顾问 — 实时汽车参数对比、价格查询、车主评价、购车建议 |
+| [mac-upgrade-advisor](./skills/mac-upgrade-advisor/) | 判断 Mac 是否值得换新 —— 按真实瓶颈而非芯片代数决策 |
 
 ## 安装
 
