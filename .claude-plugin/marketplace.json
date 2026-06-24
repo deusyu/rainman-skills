@@ -17,6 +17,15 @@
       "skills": [
         "./skills/nl2ledger"
       ]
+    },
+    {
+      "name": "mac-upgrade-advisor",
+      "description": "Decide whether a Mac is worth upgrading — by real bottleneck, not chip generation",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/mac-upgrade-advisor"
+      ]
     }
   ]
 }
