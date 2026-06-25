@@ -62,6 +62,15 @@
       "skills": [
         "./skills/qweather"
       ]
+    },
+    {
+      "name": "check-name-clearance",
+      "description": "Check whether a company, product, app, or App Store seller name is already used — domains, trademarks, App Store, packages, social, and state LLC availability",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/check-name-clearance"
+      ]
     }
   ]
 }

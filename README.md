@@ -16,6 +16,7 @@ A monorepo of custom [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 | [qweather](./skills/qweather/) | Weather query — real-time weather, forecasts, and life indices (QWeather) |
 | [car-advisor](./skills/car-advisor/) | Real-time car comparison and purchase advisor with live data |
 | [mac-upgrade-advisor](./skills/mac-upgrade-advisor/) | Decide whether a Mac is worth upgrading — by real bottleneck, not chip generation |
+| [check-name-clearance](./skills/check-name-clearance/) | Check if a company/product/app name is taken — domains, trademarks, App Store, packages, state LLC |
 
 ## Installation
 
