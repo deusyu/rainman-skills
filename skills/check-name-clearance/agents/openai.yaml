@@ -1,0 +1,4 @@
+interface:
+  display_name: "Check Name Clearance"
+  short_description: "Check name duplicates, domains, and legal risk"
+  default_prompt: "Use $check-name-clearance to check whether this proposed company or app seller name is already used."
