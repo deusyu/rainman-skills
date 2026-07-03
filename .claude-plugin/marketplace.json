@@ -80,6 +80,15 @@
       "skills": [
         "./skills/mermaid-link"
       ]
+    },
+    {
+      "name": "portrait-prompt",
+      "description": "De-AI-flavor portrait prompts — 8-dimension framework, anti-plastic-skin self-check, per-model adaptation (Midjourney/SD/Flux/GPT-Image/Seedream)",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/portrait-prompt"
+      ]
     }
   ]
 }
