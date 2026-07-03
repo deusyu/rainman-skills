@@ -202,6 +202,40 @@ Model Y 焕新版有座椅通风吗
 
 Claude will search live data, generate comparison tables, summarize owner feedback, and give purchase recommendations with data sources cited.
 
+## mermaid-link
+
+Turn Mermaid diagrams in conversations into clickable preview links. Instead of copying diagram code out of the chat and pasting it into a renderer, you (or anyone you share the link with) just click — the diagram opens in [MMD Paper](https://mmd.dyu.sh), rendered instantly.
+
+### Features
+
+- Works automatically: when Claude generates a Mermaid diagram, it appends a preview link right after the code block
+- Also works on demand: paste any Mermaid code and ask for a link
+- Links are self-contained — the diagram is encoded in the URL hash, no account, no server storage
+- Private by design: the hash fragment never reaches any server; MMD Paper renders 100% client-side
+- UTF-8 / Chinese labels fully supported
+- No API key required
+
+### Usage
+
+Once installed, it kicks in on its own — ask Claude for any diagram:
+
+```
+画一个用户登录流程的时序图
+```
+
+Claude replies with the ```` ```mermaid ```` block plus a link like
+`[▶ Open diagram](https://mmd.dyu.sh/#Zmxvd2NoYXJ0...)` — click it and the rendered
+diagram opens in the browser, where you can switch themes, zoom, and export SVG/PNG.
+
+Or hand it existing code:
+
+```
+把这段 mermaid 变成链接：graph TD; A-->B
+```
+```
+打开这个图 / open this diagram
+```
+
 ## License
 
 [MIT](./LICENSE)
