@@ -18,6 +18,7 @@ Claude Code Skills by Rainman.
 | [mac-upgrade-advisor](./skills/mac-upgrade-advisor/) | 判断 Mac 是否值得换新 —— 按真实瓶颈而非芯片代数决策 |
 | [check-name-clearance](./skills/check-name-clearance/) | 名称查重 — 查公司/产品/App 名是否被占用：域名、商标、App Store、包名、各州 LLC |
 | [mermaid-link](./skills/mermaid-link/) | Mermaid 秒开链接 — 对话里生成的 Mermaid 图一键在 [mmd.dyu.sh](https://mmd.dyu.sh) 打开，免复制粘贴 |
+| [portrait-prompt](./skills/portrait-prompt/) | 去AI味人像提示词 — 8 维框架 + 反塑料皮肤自检 + 按模型方言适配 |
 
 ## 安装
 
@@ -234,6 +235,31 @@ Claude 会在 ```` ```mermaid ```` 代码块后附上形如
 ```
 ```
 打开这个图
+```
+
+## portrait-prompt
+
+去AI味人像提示词。描述你想要的人像，Claude 按 8 维框架——主体人设、服装材质、表情瞬间、镜头构图、光线皮肤、背景氛围、画质处理、负面词——构建摄影级提示词，强制跑一遍反AI味自检，再按目标模型方言适配输出。
+
+### 功能
+
+- 针对塑料感 / AI味 / 廉价感的根源（统计均值回归）下手，而非表面堆词
+- 每维硬门槛：具体数字年龄、皮肤微观四件套（毛孔/肤色不均/油光/绒毛）、唯一有动机的主光、真实焦段+光圈数值、缺陷预算
+- 结构性风险处理：手部、画面内文字与 logo、密集网格物、人群面孔
+- 输出前强制自检：均值脸风险、对比堆叠、饱和度陷阱
+- 模型方言适配：Midjourney / Stable Diffusion / Flux / GPT-Image / 即梦 —— 无负面通道的模型自动把负面词转为正向陈述
+- 无需 API Key
+
+### 使用示例
+
+```
+给我一个克制老钱风的人像提示词，用在 Midjourney
+```
+```
+体育赛事广播截图风，网球，16:9，Flux 用
+```
+```
+一个 50 岁陶艺家在工作室的肖像，去AI味
 ```
 
 ## License

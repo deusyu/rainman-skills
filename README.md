@@ -18,6 +18,7 @@ A monorepo of custom [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 | [mac-upgrade-advisor](./skills/mac-upgrade-advisor/) | Decide whether a Mac is worth upgrading — by real bottleneck, not chip generation |
 | [check-name-clearance](./skills/check-name-clearance/) | Check if a company/product/app name is taken — domains, trademarks, App Store, packages, state LLC |
 | [mermaid-link](./skills/mermaid-link/) | Turn Mermaid diagrams in conversations into clickable preview links ([mmd.dyu.sh](https://mmd.dyu.sh)) — no copy-paste |
+| [portrait-prompt](./skills/portrait-prompt/) | De-AI-flavor portrait prompts — 8-dimension framework, anti-plastic-skin self-check, per-model adaptation |
 
 ## Installation
 
@@ -234,6 +235,31 @@ Or hand it existing code:
 ```
 ```
 打开这个图 / open this diagram
+```
+
+## portrait-prompt
+
+De-AI-flavor portrait prompts. Describe the portrait you want and Claude builds a photorealistic prompt through an 8-dimension framework — persona, fabric, moment, lens, light & skin, background, finishing, negatives — runs a mandatory anti-AI-flavor self-check, then adapts the output to your image model.
+
+### Features
+
+- Targets the root causes of plastic skin / AI flavor / stock-photo cheapness, not the symptoms
+- Hard gates per dimension: numeric age, skin micro-texture four-pack (pores / uneven tone / oil sheen / vellus hair), single motivated key light, real focal length + f-stop, imperfection budget
+- Structural risk handling: hands, in-scene text & logos, dense repeating grids, crowd faces
+- Mandatory self-check before output: mean-face risk, contrast stacking, saturation traps
+- Model dialect adaptation: Midjourney / Stable Diffusion / Flux / GPT-Image / Seedream — negative prompts auto-converted to positive statements for models without a negative channel
+- No API key required
+
+### Usage
+
+```
+给我一个克制老钱风的人像提示词，用在 Midjourney
+```
+```
+体育赛事广播截图风，网球，16:9，Flux 用
+```
+```
+a 50-year-old ceramicist in her studio, photoreal portrait prompt, de-AI
 ```
 
 ## License
