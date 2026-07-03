@@ -17,6 +17,7 @@ Claude Code Skills by Rainman.
 | [car-advisor](./skills/car-advisor/) | 买车顾问 — 实时汽车参数对比、价格查询、车主评价、购车建议 |
 | [mac-upgrade-advisor](./skills/mac-upgrade-advisor/) | 判断 Mac 是否值得换新 —— 按真实瓶颈而非芯片代数决策 |
 | [check-name-clearance](./skills/check-name-clearance/) | 名称查重 — 查公司/产品/App 名是否被占用：域名、商标、App Store、包名、各州 LLC |
+| [mermaid-link](./skills/mermaid-link/) | Mermaid 秒开链接 — 对话里生成的 Mermaid 图一键在 [mmd.dyu.sh](https://mmd.dyu.sh) 打开，免复制粘贴 |
 
 ## 安装
 

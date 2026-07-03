@@ -17,6 +17,7 @@ A monorepo of custom [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 | [car-advisor](./skills/car-advisor/) | Real-time car comparison and purchase advisor with live data |
 | [mac-upgrade-advisor](./skills/mac-upgrade-advisor/) | Decide whether a Mac is worth upgrading — by real bottleneck, not chip generation |
 | [check-name-clearance](./skills/check-name-clearance/) | Check if a company/product/app name is taken — domains, trademarks, App Store, packages, state LLC |
+| [mermaid-link](./skills/mermaid-link/) | Turn Mermaid diagrams in conversations into clickable preview links ([mmd.dyu.sh](https://mmd.dyu.sh)) — no copy-paste |
 
 ## Installation
 

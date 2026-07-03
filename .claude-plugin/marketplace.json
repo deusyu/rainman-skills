@@ -71,6 +71,15 @@
       "skills": [
         "./skills/check-name-clearance"
       ]
+    },
+    {
+      "name": "mermaid-link",
+      "description": "Turn Mermaid diagrams in conversations into clickable preview links (mmd.dyu.sh) — no copy-paste",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/mermaid-link"
+      ]
     }
   ]
 }
