@@ -19,6 +19,7 @@ A monorepo of custom [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 | [check-name-clearance](./skills/check-name-clearance/) | Check if a company/product/app name is taken — domains, trademarks, App Store, packages, state LLC |
 | [mermaid-link](./skills/mermaid-link/) | Turn Mermaid diagrams in conversations into clickable preview links ([mmd.dyu.sh](https://mmd.dyu.sh)) — no copy-paste |
 | [portrait-prompt](./skills/portrait-prompt/) | De-AI-flavor portrait prompts — 8-dimension framework, anti-plastic-skin self-check, per-model adaptation |
+| [share-to-xhs](./skills/share-to-xhs/) | Publish prepared `share/` packages to Xiaohongshu through Chrome with preview, verification, and duplicate protection |
 
 ## Installation
 
@@ -260,6 +261,33 @@ De-AI-flavor portrait prompts. Describe the portrait you want and Claude builds 
 ```
 ```
 a 50-year-old ceramicist in her studio, photoreal portrait prompt, de-AI
+```
+
+## share-to-xhs
+
+Publish finished Xiaohongshu copy and ordered local images from a project's `share/` or `share-rednote/` directory. The skill parses the package deterministically, validates XHS limits, fills the real creator page in the user's Chrome session, pauses for a final visual confirmation, verifies the published note in content management, and records a hash-based receipt to prevent duplicates.
+
+### Features
+
+- Supports standard `### 小红书` + `## Attach` share-kit chapters
+- Supports `note.md` packages with title choices and carousel order
+- Preserves exact copy and image order; never converts X/朋友圈 copy implicitly
+- QR-login screenshot handoff, real creator-page preview, and action-time confirmation
+- Strict post-publication verification and an atomic `.publish/xhs-ledger.json`
+- Local parser uses only the Python standard library
+
+### Requirement
+
+Automated publishing requires a runtime that exposes the user's Chrome session. In Codex, install and enable the Chrome control plugin/extension. If controllable Chrome is unavailable, the skill can prepare the normalized payload but must not silently switch to another browser.
+
+### Usage
+
+```text
+Use $share-to-xhs to publish nice-talk/share/01-launch to Xiaohongshu.
+```
+
+```text
+Scan this project's share directory and show which Xiaohongshu posts are ready.
 ```
 
 ## License

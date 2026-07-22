@@ -89,6 +89,15 @@
       "skills": [
         "./skills/portrait-prompt"
       ]
+    },
+    {
+      "name": "share-to-xhs",
+      "description": "Publish prepared share-kit posts to Xiaohongshu through Chrome with preview, verification, and duplicate protection",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/share-to-xhs"
+      ]
     }
   ]
 }

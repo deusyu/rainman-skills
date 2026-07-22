@@ -19,6 +19,7 @@ Claude Code Skills by Rainman.
 | [check-name-clearance](./skills/check-name-clearance/) | 名称查重 — 查公司/产品/App 名是否被占用：域名、商标、App Store、包名、各州 LLC |
 | [mermaid-link](./skills/mermaid-link/) | Mermaid 秒开链接 — 对话里生成的 Mermaid 图一键在 [mmd.dyu.sh](https://mmd.dyu.sh) 打开，免复制粘贴 |
 | [portrait-prompt](./skills/portrait-prompt/) | 去AI味人像提示词 — 8 维框架 + 反塑料皮肤自检 + 按模型方言适配 |
+| [share-to-xhs](./skills/share-to-xhs/) | 通过 Chrome 把现成 `share/` 套件发布到小红书，带预览、验证和防重复记录 |
 
 ## 安装
 
@@ -260,6 +261,33 @@ Claude 会在 ```` ```mermaid ```` 代码块后附上形如
 ```
 ```
 一个 50 岁陶艺家在工作室的肖像，去AI味
+```
+
+## share-to-xhs
+
+把项目 `share/` 或 `share-rednote/` 目录里已经完成的小红书文案和有序图片发布出去。Skill 会确定性解析内容、检查平台限制、在用户真实 Chrome 的创作中心填表、停在发布前做最终目视确认，发布后再到内容管理验证，并写入基于哈希的回执防止重复发布。
+
+### 功能
+
+- 支持标准 `### 小红书` + `## Attach` share-kit 章节
+- 支持带标题候选和轮播顺序的 `note.md` 套件
+- 保留原始文案与图片顺序，不会擅自把 X/朋友圈文案改成小红书稿
+- 支持扫码登录截图交接、真实创作页预览和点击前确认
+- 严格验证发布结果，并原子写入 `.publish/xhs-ledger.json`
+- 本地解析器只依赖 Python 标准库
+
+### 运行要求
+
+自动发布需要当前运行时能够控制用户的 Chrome 会话。在 Codex 中需安装并启用 Chrome 控制插件/扩展；如果没有可控 Chrome，Skill 只能生成标准化 payload，不得静默切换到其他浏览器。
+
+### 使用示例
+
+```text
+使用 $share-to-xhs 把 nice-talk/share/01-launch 发布到小红书。
+```
+
+```text
+扫描这个项目的 share 目录，告诉我哪些小红书内容可以直接发。
 ```
 
 ## License

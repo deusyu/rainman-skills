@@ -1,0 +1,4 @@
+interface:
+  display_name: "Share to Xiaohongshu"
+  short_description: "Publish prepared share kits to Xiaohongshu safely"
+  default_prompt: "Use $share-to-xhs to preview and publish a prepared project share kit to Xiaohongshu in Chrome."
