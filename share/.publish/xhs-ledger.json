@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "platform": "xiaohongshu",
+  "attempts": [
+    {
+      "attemptId": "c75fd291-f838-444a-9783-053f823f5233",
+      "itemKey": "01-skill-launch",
+      "postId": "rainman-skills/share/01-skill-launch",
+      "sourceDocument": "01-skill-launch/README.md",
+      "sourceHash": "sha256:3738959e541af1d459bc176e65ffef4fc4430cdc9f0f3ae87d34a33bc9e4f19d",
+      "payloadHash": "sha256:cc7860954846f86a82e1ee611279c0efc78d98b45db3e0d8a08bbbf0b720be49",
+      "accountKey": "xhs:Rainman",
+      "title": "复制粘贴发帖太烦,我让AI代劳了",
+      "images": [
+        {
+          "path": "01-skill-launch/cover.png",
+          "sha256": "sha256:007a8136ff0054692d791799188cabb04bcda8b2e4c861217108916198688d97"
+        },
+        {
+          "path": "01-skill-launch/02-flow.png",
+          "sha256": "sha256:506db0ebf891bd48efc2e3cc9fa0a7ce7a500380b22bbc4eeef6300e33751f39"
+        },
+        {
+          "path": "01-skill-launch/03-safety.png",
+          "sha256": "sha256:accf14a2adef4bc50db683166c5b5380fcc54512197851f08258b68917b739d3"
+        }
+      ],
+      "backend": "chrome",
+      "state": "reviewing",
+      "createdAt": "2026-07-24T08:28:52+00:00",
+      "updatedAt": "2026-07-24T08:30:37+00:00",
+      "events": [
+        {
+          "state": "armed",
+          "at": "2026-07-24T08:28:52+00:00",
+          "detail": "Final preview approved; publish action armed"
+        },
+        {
+          "state": "submitted",
+          "at": "2026-07-24T08:29:24+00:00"
+        },
+        {
+          "state": "reviewing",
+          "at": "2026-07-24T08:30:37+00:00",
+          "detail": "Note manager top entry matches exact title 复制粘贴发帖太烦,我让AI代劳了 at 2026-07-24 16:29, status 审核中"
+        }
+      ]
+    }
+  ],
+  "updatedAt": "2026-07-24T08:30:37+00:00"
+}
