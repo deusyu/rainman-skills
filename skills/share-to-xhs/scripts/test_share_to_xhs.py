@@ -72,6 +72,18 @@ X：`x-only.png`；小红书：`cover.png` 为主、`detail.png` 为辅。
         self.assertEqual([item["item_key"] for item in result["candidates"]], ["01-launch"])
         self.assertEqual(result["candidates"][0]["status"], "ready")
 
+    def test_title_index_rejected_for_standard_schema(self) -> None:
+        share, chapter = self.make_standard()
+        with self.assertRaises(ShareError):
+            parse_candidate(chapter, "share-kit-v1", share, title_index=1)
+
+    def test_non_recommended_ratio_warns(self) -> None:
+        share, chapter = self.make_standard()
+        fake_png(chapter / "cover.png", 1080, 1350, marker=b"cover45")  # 4:5, not the XHS 3:4
+        payload = parse_candidate(chapter, "share-kit-v1", share)
+        self.assertTrue(any(item["code"] == "NOT_RECOMMENDED_RATIO" for item in payload["diagnostics"]))
+        self.assertTrue(any(item["code"] == "LANDSCAPE_IMAGE" for item in payload["diagnostics"]))
+
     def test_long_title_is_invalid(self) -> None:
         share, chapter = self.make_standard()
         payload = parse_candidate(chapter, "share-kit-v1", share, title_override="一" * 21)

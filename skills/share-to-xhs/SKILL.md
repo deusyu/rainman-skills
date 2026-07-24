@@ -61,7 +61,7 @@ python3 scripts/share_to_xhs.py prepare /absolute/path/to/project/share-rednote 
   --output /tmp/xhs-payload.json
 ```
 
-Do not silently choose among multiple title candidates. The preparation command blocks titles over 20 Unicode code points, URLs, missing assets, more than 10 tags, more than 18 images, and content over 1,000 Unicode code points. It warns about landscape or unusually small images.
+Do not silently choose among multiple title candidates; `--title-index` applies only to the rednote schema and is rejected for standard chapters. The preparation command blocks titles over 20 visible characters, URLs, missing assets, more than 10 tags, more than 18 images, and content over 1,000 visible characters. It warns about images that miss the XHS recommendation: 3:4 portrait, 1242x1656 px, width at least 1080 px. Landscape or off-ratio warnings mean the source images should usually be recaptured in portrait, not published as-is.
 
 If the current revision has a blocking attempt for the same account, stop unless the user explicitly requests a repost or verification resolves the old attempt.
 
@@ -97,9 +97,11 @@ After action-time authorization, first create a conservative duplicate-protectio
 ```bash
 python3 scripts/share_to_xhs.py ledger arm \
   --payload /tmp/xhs-payload.json \
-  --account-key 'xhs:visible-account-alias' \
+  --account-key 'xhs:<exact-visible-nickname>' \
   --backend chrome
 ```
+
+Derive the account key deterministically: `xhs:` plus the exact account nickname visible on the creator page, trimmed, with no invented alias or translation. Duplicate protection keys on this value — an inconsistent alias across sessions defeats it. If the nickname is not visible, navigate to where it is before arming.
 
 Keep the returned `attemptId`. Then:
 

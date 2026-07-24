@@ -25,6 +25,11 @@ MIME_BY_SUFFIX = {
     ".jpeg": "image/jpeg",
     ".webp": "image/webp",
 }
+# XHS recommended upload: 3:4 portrait, 1242x1656 px, width >= 1080 px.
+XHS_RATIO = 3 / 4
+XHS_RATIO_TOLERANCE = 0.02
+XHS_RECOMMENDED_SIZE = "1242x1656"
+XHS_MIN_WIDTH = 1080
 BLOCKING_LEDGER_STATES = {"armed", "submitted", "reviewing", "unknown", "verified"}
 ALLOWED_TRANSITIONS = {
     "armed": {"submitted", "cancelled", "failed-before-click"},
@@ -251,11 +256,11 @@ def image_records(images: list[Path], share_root: Path) -> tuple[list[dict[str, 
         records.append(record)
         if width and height:
             if width > height:
-                diagnostics.append(diagnostic("warning", "LANDSCAPE_IMAGE", f"Landscape image will need visual crop review: {path.name} ({width}x{height})"))
-            if width < 1080:
-                diagnostics.append(diagnostic("warning", "NARROW_IMAGE", f"Image width is below 1080 px: {path.name} ({width}x{height})"))
-            if index == 0 and abs((width / height) - 0.75) > 0.08:
-                diagnostics.append(diagnostic("warning", "COVER_NOT_3_4", f"Cover is not close to 3:4: {path.name} ({width}x{height})"))
+                diagnostics.append(diagnostic("warning", "LANDSCAPE_IMAGE", f"Landscape image will be cropped on XHS; recapture as 3:4 portrait ({XHS_RECOMMENDED_SIZE}): {path.name} ({width}x{height})"))
+            elif abs((width / height) - XHS_RATIO) > XHS_RATIO_TOLERANCE:
+                diagnostics.append(diagnostic("warning", "NOT_RECOMMENDED_RATIO", f"Image is not the recommended 3:4 ({XHS_RECOMMENDED_SIZE}): {path.name} ({width}x{height})"))
+            if width < XHS_MIN_WIDTH:
+                diagnostics.append(diagnostic("warning", "NARROW_IMAGE", f"Image width is below the recommended minimum {XHS_MIN_WIDTH} px: {path.name} ({width}x{height})"))
     ratios = {round(record["width"] / record["height"], 2) for record in records if record["width"] and record["height"]}
     if len(ratios) > 1:
         diagnostics.append(diagnostic("warning", "MIXED_ASPECT_RATIOS", "Images use mixed aspect ratios; inspect the Chrome preview carefully"))
@@ -550,6 +555,8 @@ def discover(path: Path) -> tuple[Path, list[tuple[Path, str]]]:
 def parse_candidate(chapter: Path, kind: str, share_root: Path, title_index: int | None = None, title_override: str | None = None) -> dict[str, Any]:
     if kind == "rednote-v1":
         return parse_rednote(chapter, share_root, title_index, title_override)
+    if title_index is not None:
+        raise ShareError("--title-index applies only to the rednote note.md schema; use --title to override a share-kit title")
     return parse_standard(chapter, share_root, title_override)
 
 

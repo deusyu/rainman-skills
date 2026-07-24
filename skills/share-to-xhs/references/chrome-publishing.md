@@ -12,6 +12,7 @@ Before each click, fill, or upload, take a fresh semantic/DOM snapshot. Use a lo
 4. Send the screenshot to the user and explicitly ask them to scan it and finish login in Chrome.
 5. Wait for the user to say login is complete, then inspect the same tab again.
 6. Check the visible account name when available. If account identity is ambiguous, ask before publishing.
+7. Record the exact visible nickname now: the ledger account key must be `xhs:<that nickname>` verbatim. Never substitute an invented alias — the duplicate-protection ledger matches on this key.
 
 Do not read cookies, local storage, passwords, browser profiles, or session files.
 
