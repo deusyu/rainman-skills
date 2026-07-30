@@ -53,3 +53,11 @@ A toast alone is weak evidence. Require a matching creator content-management en
 Capture the note URL or ID when possible. If the exact entry is present but marked 审核中, classify it as `reviewing`, not publicly live. If only a transient success message appears and no content entry can be matched, classify the outcome as `unknown`.
 
 If publishing definitely fails, search the content list once before retrying. A network/UI error can occur after the server accepted the post.
+
+## Field notes from real runs
+
+- The publish form has a decoy: the 添加组件 section contains a "选择文件" file-attachment input that also accepts images. Before uploading, confirm the target is the image-strip add tile next to the `n/18` counter, and verify the counter incremented after every upload. A wrong upload becomes a removable file component, not a carousel image.
+- Setting the body via programmatic value-fill flattens all newlines into one paragraph. Type the body through keyboard input so each line becomes its own paragraph, then confirm the paragraph structure in the snapshot.
+- Type each `#topic` token and select the exact-match entry from the suggestion dropdown; a typed token without selection stays plain text and is not a topic.
+- A direct `www.xiaohongshu.com/explore/<id>` URL opened without an xsec token can return error 300031 (当前笔记暂时无法浏览) even for a healthy published note. Treat the creator note-manager entry as authoritative; the note id is recoverable from the manager page DOM (24-hex, leading 8 hex digits are the publish epoch).
+- Prepared payload JSON files kept in session temp directories do not survive across sessions. Re-run `prepare` on the unchanged source; it reproduces the same `payload_hash`, so ledger transitions still match the recorded attempt.
