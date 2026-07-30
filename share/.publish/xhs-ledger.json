@@ -26,9 +26,9 @@
         }
       ],
       "backend": "chrome",
-      "state": "reviewing",
+      "state": "verified",
       "createdAt": "2026-07-24T08:28:52+00:00",
-      "updatedAt": "2026-07-24T08:30:37+00:00",
+      "updatedAt": "2026-07-30T16:21:00+00:00",
       "events": [
         {
           "state": "armed",
@@ -43,9 +43,18 @@
           "state": "reviewing",
           "at": "2026-07-24T08:30:37+00:00",
           "detail": "Note manager top entry matches exact title 复制粘贴发帖太烦,我让AI代劳了 at 2026-07-24 16:29, status 审核中"
+        },
+        {
+          "state": "verified",
+          "at": "2026-07-30T16:21:00+00:00",
+          "detail": "Note manager shows entry published (views=1 fav=1) with exact title and 2026-07-24 16:29 timestamp; direct explore URL requires xsec token (error 300031), note id extracted from manager DOM",
+          "remoteUrl": "https://www.xiaohongshu.com/explore/6a6322580000000001001176",
+          "remoteId": "6a6322580000000001001176"
         }
-      ]
+      ],
+      "remoteUrl": "https://www.xiaohongshu.com/explore/6a6322580000000001001176",
+      "remoteId": "6a6322580000000001001176"
     }
   ],
-  "updatedAt": "2026-07-24T08:30:37+00:00"
+  "updatedAt": "2026-07-30T16:21:00+00:00"
 }
