@@ -20,6 +20,7 @@ A monorepo of custom [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 | [mermaid-link](./skills/mermaid-link/) | Turn Mermaid diagrams in conversations into clickable preview links ([mmd.dyu.sh](https://mmd.dyu.sh)) — no copy-paste |
 | [portrait-prompt](./skills/portrait-prompt/) | De-AI-flavor portrait prompts — 8-dimension framework, anti-plastic-skin self-check, per-model adaptation |
 | [share-to-xhs](./skills/share-to-xhs/) | Publish prepared `share/` packages to Xiaohongshu through Chrome with preview, verification, and duplicate protection |
+| [scan-cutout](./skills/scan-cutout/) | Extract ID cards & documents from scans — auto-detect, crop, rotate upright, true-size 300dpi, composites, watermarks, PDF merge |
 
 ## Installation
 
@@ -288,6 +289,28 @@ Use $share-to-xhs to publish nice-talk/share/01-launch to Xiaohongshu.
 
 ```text
 Scan this project's share directory and show which Xiaohongshu posts are ready.
+```
+
+## scan-cutout
+
+Extract ID cards and documents from flatbed scans: auto-detect boundaries via projection profiling, tighten to the standard aspect ratio, rotate upright, and resample to true physical size at 300dpi. Pure Pillow — no OpenCV.
+
+### Features
+
+- Detects any-color cards on white scanner backgrounds — even white cards, via their printed elements (luminance + saturation foreground mask)
+- Validates the detected box against standard document aspect ratios (ID-1 1.585, vehicle license 1.467) before cropping
+- True-size output: 85.6×54mm → 1011×638 px @300dpi, real DPI tags, chroma subsampling off for crisp text
+- Two-sided composites; tiled diagonal anti-misuse watermark with CJK font fallback and tofu detection
+- Full-page mode for booklets/contracts (border trim + rotate, original resolution kept); multi-page PDF merge with size cap
+- Probe mode with a tuning guide; phone-photo EXIF orientation handled
+
+### Usage
+
+```
+把这张身份证扫描件抠出来，做成标准双面合成，对外版本加水印
+```
+```
+Extract the vehicle license from this scan and standardize it at true size
 ```
 
 ## License

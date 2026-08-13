@@ -98,6 +98,15 @@
       "skills": [
         "./skills/share-to-xhs"
       ]
+    },
+    {
+      "name": "scan-cutout",
+      "description": "Extract ID cards and documents from scans — auto-detect, crop, rotate upright, true-size 300dpi, composites, watermarks, PDF merge",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/scan-cutout"
+      ]
     }
   ]
 }
