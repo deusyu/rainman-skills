@@ -21,6 +21,7 @@ Claude Code Skills by Rainman.
 | [portrait-prompt](./skills/portrait-prompt/) | 去AI味人像提示词 — 8 维框架 + 反塑料皮肤自检 + 按模型方言适配 |
 | [share-to-xhs](./skills/share-to-xhs/) | 通过 Chrome 把现成 `share/` 套件发布到小红书，带预览、验证和防重复记录 |
 | [scan-cutout](./skills/scan-cutout/) | 证件扫描件抠图标准化 — 自动检测、裁切转正、实物尺寸 300dpi、双面合成、防挪用水印、PDF 合并 |
+| [rainman-chat-digest](./skills/rainman-chat-digest/) | 群聊简报 — 从微信群聊天记录提炼精华，生成结构化的每日/每周总结 |
 
 ## 安装
 
@@ -311,6 +312,24 @@ Claude 会在 ```` ```mermaid ```` 代码块后附上形如
 ```
 ```
 把行驶证从扫描件里抠出来，按实物尺寸标准化
+```
+
+## rainman-chat-digest
+
+读取导出的微信群聊天记录（txt / md / 直接粘贴），提炼成一份简短的纯文本简报：开头用 1–2 段话概括最热的话题，正文按分类列要点。
+
+### 功能
+
+- 过滤问好、表情包刷屏、无上下文的短回复
+- 按内容灵活分类：工具技巧、资源推荐、行业动态、观点碰撞、群友趣事
+- 保留发言人、完整的工具名和链接，不编造聊天记录里没有的内容
+- 输出纯文本（不用 markdown），可以直接贴回微信
+- 简报保存为 `群名-YYYY-MM-DD-digest.txt`，与源文件放在同一目录
+
+### 使用示例
+
+```text
+帮我总结这份群聊记录：~/Downloads/ai-group-2026-03-12.txt
 ```
 
 ## License

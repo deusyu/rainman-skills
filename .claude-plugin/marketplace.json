@@ -107,6 +107,15 @@
       "skills": [
         "./skills/scan-cutout"
       ]
+    },
+    {
+      "name": "rainman-chat-digest",
+      "description": "Turn WeChat group chat exports into a structured daily/weekly digest",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/rainman-chat-digest"
+      ]
     }
   ]
 }

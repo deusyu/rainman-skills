@@ -21,6 +21,7 @@ A monorepo of custom [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 | [portrait-prompt](./skills/portrait-prompt/) | De-AI-flavor portrait prompts — 8-dimension framework, anti-plastic-skin self-check, per-model adaptation |
 | [share-to-xhs](./skills/share-to-xhs/) | Publish prepared `share/` packages to Xiaohongshu through Chrome with preview, verification, and duplicate protection |
 | [scan-cutout](./skills/scan-cutout/) | Extract ID cards & documents from scans — auto-detect, crop, rotate upright, true-size 300dpi, composites, watermarks, PDF merge |
+| [rainman-chat-digest](./skills/rainman-chat-digest/) | Turn WeChat group chat exports into a structured daily/weekly digest |
 
 ## Installation
 
@@ -311,6 +312,24 @@ Extract ID cards and documents from flatbed scans: auto-detect boundaries via pr
 ```
 ```
 Extract the vehicle license from this scan and standardize it at true size
+```
+
+## rainman-chat-digest
+
+Read an exported WeChat group chat (txt / md / pasted text) and distill it into a short, plain-text digest: a 1–2 paragraph lead on the hottest topics, then bullet points grouped by category.
+
+### Features
+
+- Filters out greetings, sticker spam, and context-free replies
+- Flexible emoji categories: tools & tips, resources, industry news, debates, fun moments
+- Keeps who-said-what, full tool names and links; never invents content
+- Plain-text output (no markdown) that pastes cleanly back into WeChat
+- Saves `<group>-YYYY-MM-DD-digest.txt` next to the source file
+
+### Usage
+
+```text
+Summarize this group chat export: ~/Downloads/ai-group-2026-03-12.txt
 ```
 
 ## License
